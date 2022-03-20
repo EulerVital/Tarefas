@@ -1,0 +1,29 @@
+Criador e gerenciador de tarefas
+
+-Criar tarefas de varias categorias, cada categoria pode ter sua finalidade de recurso a ser usado.
+
+-O recurso, são as funcionalidades da aplicação, que vai desde enviar notificações, até efetuar pagamentos ou gerar relatórios.
+
+Os recursos disponíveis são
+
+	-Financias
+		-Pagamentos de contas
+		-Controle de gastos
+
+	-Futebol
+		-Noticias sobre seu time
+		-Jogo de cartola
+		-Apostas em resultados
+
+	-Notificações personalizadas
+		-Lembrete por e-mail
+		-New Laster
+		
+
+-Com base nas informações cadastradas, teremos a funcionalidade de "Novidades da Semana".
+
+	-Pegar todos os recursos cadastrados e listar as novidades da semana de cada 1.
+
+
+
+

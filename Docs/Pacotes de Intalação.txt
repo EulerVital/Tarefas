@@ -1,0 +1,17 @@
+Projeto Repository
+
+	-EntityFrameWorkCore
+	-EntityFrameWorkCore.Relational
+	-EntityFrameworkCore.Design
+	-EntityFrameWorkCore.Tools
+	-Extensions.Configuration.Json
+	-EntityFrameWorkCore.SqlServer
+
+Projeto API
+
+	-EntityFrameWorkCore.Designer
+
+
+
+
+	
