@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tarefas.Interface.Repositories;
+using Tarefas.Repository.Repositories;
 
 namespace Tarefas.API.Helps
 {
@@ -15,7 +17,7 @@ namespace Tarefas.API.Helps
 
         private static void RepositoryDependences(IServiceCollection svc)
         {
-            //Serviços da aplicação
+            svc.AddScoped<ITarefaRepository, TarefaRepository>();
         }
     }
 }

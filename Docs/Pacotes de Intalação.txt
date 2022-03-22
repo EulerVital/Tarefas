@@ -10,6 +10,7 @@ Projeto Repository
 Projeto API
 
 	-EntityFrameWorkCore.Designer
+	-Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
 
 
