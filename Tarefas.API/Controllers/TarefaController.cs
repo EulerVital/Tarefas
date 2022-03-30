@@ -20,6 +20,11 @@ namespace Tarefas.API.Controllers
 
         }
 
+        /// <summary>
+        /// Teste tarefa get
+        /// </summary>
+        /// <param name="page">Filtro page</param>
+        /// <returns></returns>
         [HttpGet]
         public ReturnListObject<Tarefa> Get([FromQuery] PageFilter page)
         {

@@ -13,6 +13,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Tarefas.API.Helps;
 using Tarefas.Repository;
+using Swashbuckle;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 namespace Tarefas.API
 {
@@ -39,6 +43,27 @@ namespace Tarefas.API
 
             services.AddControllers()
                     .AddNewtonsoftJson(options=> options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Tarefas API",
+                    Description = "Contém funcionaliades de tarefas que vão ajudar no dia dia - 'AINDA EM FASE DE TESTE'.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Euler Vital",
+                        Email = string.Empty,
+                        Url = new Uri("https://br.linkedin.com/in/euler-vital-p-silva-940b31120"),
+                    }
+                });
+
+                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //c.IncludeXmlComments(xmlPath);
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +79,16 @@ namespace Tarefas.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tarefas API");
+            });
 
             app.UseEndpoints(endpoints =>
             {
